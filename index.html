@@ -1,102 +1,2087 @@
+/*
+================================================================================
+Velza Solutions - Flagship AI Agency Website
+--------------------------------------------------------------------------------
+- Modern, minimalist, and visually stunning design
+- Water-themed animations (Canvas/SVG)
+- Dynamic water ripple cursor effect
+- Responsive, accessible, and SEO-optimized
+- Modular, maintainable code with clear comments
+- Ready for deployment (e.g., Vercel)
+================================================================================
+*/
+
+/* 
+--------------------------------------------------------------------------------
+File Structure (for deployment):
+- index.html
+- /css/styles.css
+- /js/main.js
+- /assets/ (images, SVGs, etc.)
+- README.md
+--------------------------------------------------------------------------------
+*/
+
+/* 
+================================================================================
+index.html
+================================================================================
+*/
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Jaskirat Soodan</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet" />
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      font-family: 'Inter', sans-serif;
-    }
-    body {
-      background-color: #0a0a0a;
-      color: #ffffff;
-      line-height: 1.6;
-      padding: 2rem;
-    }
-    h1, h2, h3 {
-      color: #00ffcc;
-    }
-    header {
-      text-align: center;
-      margin-bottom: 2rem;
-    }
-    .btn {
-      background-color: #00ffcc;
-      color: #0a0a0a;
-      padding: 0.5rem 1rem;
-      border: none;
-      border-radius: 8px;
-      cursor: pointer;
-      text-decoration: none;
-      display: inline-block;
-      margin: 0.5rem;
-    }
-    section {
-      margin-bottom: 3rem;
-    }
-    .contact a {
-      color: #00ffcc;
-      text-decoration: none;
-    }
-  </style>
+  <!-- Meta Tags for SEO & Responsiveness -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Velza Solutions - Faceless AI Solutions for the Future. Modern AI agency delivering innovative, automated, and trustworthy AI-powered business solutions.">
+  <meta name="keywords" content="AI, Artificial Intelligence, Agency, Automation, Machine Learning, Data Analytics, Chatbot, Velza Solutions">
+  <meta name="author" content="Velza Solutions">
+  <title>Velza Solutions | Faceless AI Solutions for the Future</title>
+  <!-- Favicon Placeholder -->
+  <link rel="icon" href="assets/logo-placeholder.svg" type="image/svg+xml">
+  <!-- Google Fonts: Modern Sans-Serif -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <!-- Main CSS -->
+  <link rel="stylesheet" href="css/styles.css">
+  <!-- Structured Data (JSON-LD) for SEO -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Velza Solutions",
+    "url": "https://velzasolutions.com",
+    "logo": "https://velzasolutions.com/assets/logo-placeholder.svg",
+    "sameAs": [
+      "https://linkedin.com/company/velzasolutions",
+      "https://twitter.com/velzasolutions",
+      "https://github.com/velzasolutions"
+    ],
+    "description": "Faceless AI Solutions for the Future. Modern AI agency delivering innovative, automated, and trustworthy AI-powered business solutions."
+  }
+  </script>
 </head>
 <body>
-  <header>
-    <h1>Jaskirat Soodan</h1>
-    <p>Future FinTech Leader | Class of 2028</p>
-    <a class="btn" href="mailto:jaskiratsoodan23@gmail.com">Contact Me</a>
-    <a class="btn" href="#">View Resume</a>
+  <!-- Custom Loading Animation (Water/Fish Motif) -->
+  <div id="preloader" aria-label="Loading site, please wait">
+    <canvas id="preloader-canvas"></canvas>
+    <span class="preloader-text">Velza Solutions</span>
+  </div>
+
+  <!-- Water Ripple Cursor Canvas -->
+  <canvas id="ripple-cursor"></canvas>
+
+  <!-- Header & Navigation -->
+  <header id="header" class="header">
+    <nav class="navbar" aria-label="Main Navigation">
+      <div class="navbar-brand">
+        <!-- Logo Placeholder (SVG) -->
+        <img src="assets/logo-placeholder.svg" alt="Velza Solutions Logo" class="logo" />
+        <div class="brand-text">
+          <span class="company-name">Velza Solutions</span>
+          <span class="tagline">Faceless AI Solutions for the Future</span>
+        </div>
+      </div>
+      <button class="nav-toggle" id="nav-toggle" aria-label="Open navigation menu" aria-expanded="false">
+        <span class="hamburger"></span>
+      </button>
+      <ul class="nav-links" id="nav-links">
+        <li><a href="#about" class="nav-link">About</a></li>
+        <li><a href="#services" class="nav-link">Services</a></li>
+        <li><a href="#portfolio" class="nav-link">Portfolio</a></li>
+        <li><a href="#team" class="nav-link">Team</a></li>
+        <li><a href="#contact" class="nav-link">Contact</a></li>
+        <li>
+          <!-- Dark Mode Toggle -->
+          <button id="dark-mode-toggle" class="dark-mode-toggle" aria-label="Toggle dark mode">
+            <span class="toggle-icon"></span>
+          </button>
+        </li>
+      </ul>
+    </nav>
+    <!-- CTA Button -->
+    <div class="header-cta">
+      <a href="#services" class="cta-btn" id="explore-services-btn">Explore Our Services</a>
+    </div>
   </header>
 
-  <section>
-    <h2>About Me</h2>
-    <p>I'm a highly motivated and personable high school student with a strong passion for business, finance, and leadership. I've completed over 100 hours of volunteer work, including community education and public speaking. As a class officer, NHS leader, and Wharton LBW participant, I thrive in environments that challenge me to grow and connect with others. I also love teaching Sikh music and helping others gain confidence.</p>
-  </section>
+  <!-- Main Content -->
+  <main>
+    <!-- About Us Section -->
+    <section id="about" class="section about-section" tabindex="-1">
+      <div class="container">
+        <h2 class="section-title">About Us</h2>
+        <div class="about-content">
+          <div class="about-text">
+            <p>
+              <strong>Velza Solutions</strong> is a cutting-edge AI agency delivering faceless, automated AI-powered solutions designed to streamline business processes, reduce costs, and improve customer experience. We are passionate about harnessing the power of artificial intelligence to help organizations thrive in a rapidly evolving digital landscape.
+            </p>
+            <ul class="about-highlights">
+              <li>
+                <span class="about-icon" aria-hidden="true">
+                  <!-- Innovation Icon (SVG) -->
+                  <svg width="24" height="24" fill="none" stroke="currentColor"><circle cx="12" cy="12" r="10" stroke-width="2"/><path d="M12 6v6l4 2" stroke-width="2"/></svg>
+                </span>
+                <span>Mission: <em>Empowering businesses with seamless, faceless AI automation.</em></span>
+              </li>
+              <li>
+                <span class="about-icon" aria-hidden="true">
+                  <!-- Vision Icon (SVG) -->
+                  <svg width="24" height="24" fill="none" stroke="currentColor"><ellipse cx="12" cy="12" rx="10" ry="6" stroke-width="2"/><circle cx="12" cy="12" r="3" stroke-width="2"/></svg>
+                </span>
+                <span>Vision: <em>To be the global leader in trustworthy, innovative AI solutions.</em></span>
+              </li>
+              <li>
+                <span class="about-icon" aria-hidden="true">
+                  <!-- Trust Icon (SVG) -->
+                  <svg width="24" height="24" fill="none" stroke="currentColor"><rect x="4" y="4" width="16" height="16" rx="4" stroke-width="2"/><path d="M8 12l2 2 4-4" stroke-width="2"/></svg>
+                </span>
+                <span>Core Values: <em>Innovation, Integrity, Excellence, Collaboration.</em></span>
+              </li>
+            </ul>
+            <p>
+              <strong>Our Story:</strong> Founded by a team of AI enthusiasts and business strategists, Velza Solutions has rapidly grown into a trusted partner for organizations seeking to leverage the latest in artificial intelligence. Our faceless approach ensures privacy, scalability, and seamless integration into your existing workflows.
+            </p>
+          </div>
+          <div class="about-illustration">
+            <!-- Stylized Illustration Placeholder (SVG) -->
+            <img src="assets/about-illustration.svg" alt="AI Innovation Illustration" />
+          </div>
+        </div>
+      </div>
+    </section>
 
-  <section>
-    <h2>Experience</h2>
-    <h3>Volunteer Instrument Instructor – Illinois Sikh Community Center</h3>
-    <p>Teach weekly lessons to children ages 6–18, lead group performances, and foster cultural learning.</p>
+    <!-- Services Section -->
+    <section id="services" class="section services-section" tabindex="-1">
+      <div class="container">
+        <h2 class="section-title">Our Services</h2>
+        <div class="services-grid">
+          <!-- Service Card 1 -->
+          <div class="service-card" tabindex="0">
+            <div class="service-icon">
+              <!-- Chatbot Icon (SVG) -->
+              <svg width="40" height="40" fill="none" stroke="currentColor"><rect x="6" y="10" width="28" height="20" rx="6" stroke-width="2"/><circle cx="16" cy="20" r="2" fill="currentColor"/><circle cx="24" cy="20" r="2" fill="currentColor"/><path d="M20 30v4" stroke-width="2"/></svg>
+            </div>
+            <h3 class="service-title">AI Chatbot Development</h3>
+            <p class="service-desc">Conversational agents to enhance customer engagement and automate support 24/7.</p>
+            <button class="learn-more-btn" data-service="chatbot">Learn More</button>
+          </div>
+          <!-- Service Card 2 -->
+          <div class="service-card" tabindex="0">
+            <div class="service-icon">
+              <!-- Workflow Icon (SVG) -->
+              <svg width="40" height="40" fill="none" stroke="currentColor"><rect x="8" y="8" width="8" height="8" rx="2" stroke-width="2"/><rect x="24" y="24" width="8" height="8" rx="2" stroke-width="2"/><path d="M12 16v8h16" stroke-width="2"/></svg>
+            </div>
+            <h3 class="service-title">Automated Workflow Integration</h3>
+            <p class="service-desc">Streamline business processes with intelligent AI automation and seamless integration.</p>
+            <button class="learn-more-btn" data-service="workflow">Learn More</button>
+          </div>
+          <!-- Service Card 3 -->
+          <div class="service-card" tabindex="0">
+            <div class="service-icon">
+              <!-- ML Model Icon (SVG) -->
+              <svg width="40" height="40" fill="none" stroke="currentColor"><circle cx="20" cy="20" r="8" stroke-width="2"/><path d="M20 12v-4M20 28v4M12 20h-4M28 20h4" stroke-width="2"/></svg>
+            </div>
+            <h3 class="service-title">Custom Machine Learning Models</h3>
+            <p class="service-desc">Tailored ML solutions for your unique business challenges and opportunities.</p>
+            <button class="learn-more-btn" data-service="ml">Learn More</button>
+          </div>
+          <!-- Service Card 4 -->
+          <div class="service-card" tabindex="0">
+            <div class="service-icon">
+              <!-- Analytics Icon (SVG) -->
+              <svg width="40" height="40" fill="none" stroke="currentColor"><rect x="8" y="24" width="4" height="8" rx="2" stroke-width="2"/><rect x="18" y="16" width="4" height="16" rx="2" stroke-width="2"/><rect x="28" y="8" width="4" height="24" rx="2" stroke-width="2"/></svg>
+            </div>
+            <h3 class="service-title">AI-Driven Data Analytics</h3>
+            <p class="service-desc">Transform your data into actionable insights with advanced AI-powered analytics and reporting.</p>
+            <button class="learn-more-btn" data-service="analytics">Learn More</button>
+          </div>
+        </div>
+      </div>
+      <!-- Service Modal (hidden by default) -->
+      <div id="service-modal" class="modal" aria-modal="true" role="dialog" aria-labelledby="modal-title" aria-hidden="true">
+        <div class="modal-content">
+          <button class="modal-close" id="modal-close" aria-label="Close modal">&times;</button>
+          <h3 id="modal-title">Service Details</h3>
+          <div id="modal-body">
+            <!-- Dynamic content injected by JS -->
+          </div>
+        </div>
+      </div>
+    </section>
 
-    <h3>Class Officer – Class of 2028, Neuqua Valley High School</h3>
-    <p>Plan events, coordinate with faculty, and represent student voices to improve the school community.</p>
-  </section>
+    <!-- Portfolio Section -->
+    <section id="portfolio" class="section portfolio-section" tabindex="-1">
+      <div class="container">
+        <h2 class="section-title">Portfolio & Demos</h2>
+        <div class="portfolio-filters">
+          <button class="filter-btn active" data-filter="all">All</button>
+          <button class="filter-btn" data-filter="chatbot">Chatbots</button>
+          <button class="filter-btn" data-filter="workflow">Workflow</button>
+          <button class="filter-btn" data-filter="ml">ML Models</button>
+          <button class="filter-btn" data-filter="analytics">Analytics</button>
+        </div>
+        <div class="portfolio-grid" id="portfolio-grid">
+          <!-- Portfolio Item 1 -->
+          <div class="portfolio-item" data-category="chatbot">
+            <img src="assets/portfolio-chatbot.jpg" alt="AI Chatbot Project" class="portfolio-thumb" />
+            <div class="portfolio-info">
+              <h4>Conversational AI for E-Commerce</h4>
+              <p>Automated customer support chatbot for online retail.</p>
+            </div>
+          </div>
+          <!-- Portfolio Item 2 -->
+          <div class="portfolio-item" data-category="workflow">
+            <img src="assets/portfolio-workflow.jpg" alt="Workflow Automation Project" class="portfolio-thumb" />
+            <div class="portfolio-info">
+              <h4>Automated Invoice Processing</h4>
+              <p>AI-driven workflow integration for finance teams.</p>
+            </div>
+          </div>
+          <!-- Portfolio Item 3 -->
+          <div class="portfolio-item" data-category="ml">
+            <img src="assets/portfolio-ml.jpg" alt="Machine Learning Model Project" class="portfolio-thumb" />
+            <div class="portfolio-info">
+              <h4>Custom ML for Predictive Analytics</h4>
+              <p>Tailored machine learning models for business forecasting.</p>
+            </div>
+          </div>
+          <!-- Portfolio Item 4 -->
+          <div class="portfolio-item" data-category="analytics">
+            <img src="assets/portfolio-analytics.jpg" alt="Data Analytics Project" class="portfolio-thumb" />
+            <div class="portfolio-info">
+              <h4>Real-Time Data Dashboards</h4>
+              <p>AI-powered analytics and reporting for enterprise clients.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Portfolio Lightbox Modal -->
+      <div id="portfolio-modal" class="modal" aria-modal="true" role="dialog" aria-labelledby="portfolio-modal-title" aria-hidden="true">
+        <div class="modal-content">
+          <button class="modal-close" id="portfolio-modal-close" aria-label="Close modal">&times;</button>
+          <div id="portfolio-modal-body">
+            <!-- Dynamic content injected by JS -->
+          </div>
+        </div>
+      </div>
+    </section>
 
-  <section>
-    <h2>Projects</h2>
-    <ul>
-      <li>Sudan Refugee Crisis Interactive Presentation</li>
-      <li>Spanish Story Project: "La leyenda del perro fiel"</li>
-      <li>Finance IG Page Concept (Coming Soon!)</li>
-    </ul>
-  </section>
+    <!-- Team Section -->
+    <section id="team" class="section team-section" tabindex="-1">
+      <div class="container">
+        <h2 class="section-title">Meet the Team</h2>
+        <div class="team-grid">
+          <!-- Team Member 1 -->
+          <div class="team-card" tabindex="0">
+            <div class="team-photo">
+              <img src="assets/team1.jpg" alt="Jane Doe, CEO" />
+            </div>
+            <div class="team-info">
+              <h3>Jane Doe</h3>
+              <p class="team-title">Chief Executive Officer</p>
+              <p class="team-bio">Visionary leader with 10+ years in AI and business strategy.</p>
+              <div class="team-socials">
+                <a href="#" aria-label="Jane Doe on LinkedIn"><svg width="20" height="20" fill="currentColor"><path d="M4 4h3v12H4zM5.5 2.5A1.5 1.5 0 1 1 5.5 5a1.5 1.5 0 0 1 0-3zM8 8h3v2h.1a3.3 3.3 0 0 1 3-1.7c3.2 0 3.8 2.1 3.8 4.8V16h-3v-3.3c0-.8 0-1.8-1.1-1.8-1.1 0-1.3.9-1.3 1.8V16h-3V8z"/></svg></a>
+                <a href="#" aria-label="Jane Doe on Twitter"><svg width="20" height="20" fill="currentColor"><path d="M20 3.9a8.2 8.2 0 0 1-2.4.7A4.1 4.1 0 0 0 19.4 2c-.8.5-1.7.9-2.6 1.1A4.1 4.1 0 0 0 9.8 7.1a11.7 11.7 0 0 1-8.5-4.3c-.4.7-.6 1.5-.6 2.3 0 1.6.8 3 2.1 3.8a4.1 4.1 0 0 1-1.9-.5v.1c0 2.2 1.6 4 3.7 4.4a4.1 4.1 0 0 1-1.9.1c.5 1.6 2 2.7 3.7 2.7A8.3 8.3 0 0 1 2 17.5a11.7 11.7 0 0 0 6.3 1.8c7.5 0 11.6-6.2 11.6-11.6v-.5A8.2 8.2 0 0 0 20 3.9z"/></svg></a>
+                <a href="#" aria-label="Jane Doe on GitHub"><svg width="20" height="20" fill="currentColor"><path d="M10 0C4.5 0 0 4.5 0 10c0 4.4 2.9 8.1 6.9 9.4.5.1.7-.2.7-.5v-1.7c-2.8.6-3.4-1.2-3.4-1.2-.4-1-1-1.3-1-1.3-.8-.6.1-.6.1-.6.9.1 1.4.9 1.4.9.8 1.4 2.1 1 2.6.8.1-.6.3-1 .5-1.2-2.2-.2-4.5-1.1-4.5-4.8 0-1 .4-1.8 1-2.5-.1-.2-.4-1.1.1-2.2 0 0 .8-.3 2.5 1a8.6 8.6 0 0 1 4.5 0c1.7-1.3 2.5-1 2.5-1 .5 1.1.2 2 .1 2.2.6.7 1 1.5 1 2.5 0 3.7-2.3 4.6-4.5 4.8.3.3.6.8.6 1.7v2.5c0 .3.2.6.7.5A10 10 0 0 0 10 0z"/></svg></a>
+              </div>
+            </div>
+          </div>
+          <!-- Team Member 2 -->
+          <div class="team-card" tabindex="0">
+            <div class="team-photo">
+              <img src="assets/team2.jpg" alt="John Smith, CTO" />
+            </div>
+            <div class="team-info">
+              <h3>John Smith</h3>
+              <p class="team-title">Chief Technology Officer</p>
+              <p class="team-bio">AI architect and full-stack engineer with a passion for scalable solutions.</p>
+              <div class="team-socials">
+                <a href="#" aria-label="John Smith on LinkedIn"><svg width="20" height="20" fill="currentColor"><path d="M4 4h3v12H4zM5.5 2.5A1.5 1.5 0 1 1 5.5 5a1.5 1.5 0 0 1 0-3zM8 8h3v2h.1a3.3 3.3 0 0 1 3-1.7c3.2 0 3.8 2.1 3.8 4.8V16h-3v-3.3c0-.8 0-1.8-1.1-1.8-1.1 0-1.3.9-1.3 1.8V16h-3V8z"/></svg></a>
+                <a href="#" aria-label="John Smith on Twitter"><svg width="20" height="20" fill="currentColor"><path d="M20 3.9a8.2 8.2 0 0 1-2.4.7A4.1 4.1 0 0 0 19.4 2c-.8.5-1.7.9-2.6 1.1A4.1 4.1 0 0 0 9.8 7.1a11.7 11.7 0 0 1-8.5-4.3c-.4.7-.6 1.5-.6 2.3 0 1.6.8 3 2.1 3.8a4.1 4.1 0 0 1-1.9-.5v.1c0 2.2 1.6 4 3.7 4.4a4.1 4.1 0 0 1-1.9.1c.5 1.6 2 2.7 3.7 2.7A8.3 8.3 0 0 1 2 17.5a11.7 11.7 0 0 0 6.3 1.8c7.5 0 11.6-6.2 11.6-11.6v-.5A8.2 8.2 0 0 0 20 3.9z"/></svg></a>
+                <a href="#" aria-label="John Smith on GitHub"><svg width="20" height="20" fill="currentColor"><path d="M10 0C4.5 0 0 4.5 0 10c0 4.4 2.9 8.1 6.9 9.4.5.1.7-.2.7-.5v-1.7c-2.8.6-3.4-1.2-3.4-1.2-.4-1-1-1.3-1-1.3-.8-.6.1-.6.1-.6.9.1 1.4.9 1.4.9.8 1.4 2.1 1 2.6.8.1-.6.3-1 .5-1.2-2.2-.2-4.5-1.1-4.5-4.8 0-1 .4-1.8 1-2.5-.1-.2-.4-1.1.1-2.2 0 0 .8-.3 2.5 1a8.6 8.6 0 0 1 4.5 0c1.7-1.3 2.5-1 2.5-1 .5 1.1.2 2 .1 2.2.6.7 1 1.5 1 2.5 0 3.7-2.3 4.6-4.5 4.8.3.3.6.8.6 1.7v2.5c0 .3.2.6.7.5A10 10 0 0 0 10 0z"/></svg></a>
+              </div>
+            </div>
+          </div>
+          <!-- Team Member 3 -->
+          <div class="team-card" tabindex="0">
+            <div class="team-photo">
+              <img src="assets/team3.jpg" alt="Alex Lee, Lead Data Scientist" />
+            </div>
+            <div class="team-info">
+              <h3>Alex Lee</h3>
+              <p class="team-title">Lead Data Scientist</p>
+              <p class="team-bio">Expert in machine learning, data analytics, and AI-driven insights.</p>
+              <div class="team-socials">
+                <a href="#" aria-label="Alex Lee on LinkedIn"><svg width="20" height="20" fill="currentColor"><path d="M4 4h3v12H4zM5.5 2.5A1.5 1.5 0 1 1 5.5 5a1.5 1.5 0 0 1 0-3zM8 8h3v2h.1a3.3 3.3 0 0 1 3-1.7c3.2 0 3.8 2.1 3.8 4.8V16h-3v-3.3c0-.8 0-1.8-1.1-1.8-1.1 0-1.3.9-1.3 1.8V16h-3V8z"/></svg></a>
+                <a href="#" aria-label="Alex Lee on Twitter"><svg width="20" height="20" fill="currentColor"><path d="M20 3.9a8.2 8.2 0 0 1-2.4.7A4.1 4.1 0 0 0 19.4 2c-.8.5-1.7.9-2.6 1.1A4.1 4.1 0 0 0 9.8 7.1a11.7 11.7 0 0 1-8.5-4.3c-.4.7-.6 1.5-.6 2.3 0 1.6.8 3 2.1 3.8a4.1 4.1 0 0 1-1.9-.5v.1c0 2.2 1.6 4 3.7 4.4a4.1 4.1 0 0 1-1.9.1c.5 1.6 2 2.7 3.7 2.7A8.3 8.3 0 0 1 2 17.5a11.7 11.7 0 0 0 6.3 1.8c7.5 0 11.6-6.2 11.6-11.6v-.5A8.2 8.2 0 0 0 20 3.9z"/></svg></a>
+                <a href="#" aria-label="Alex Lee on GitHub"><svg width="20" height="20" fill="currentColor"><path d="M10 0C4.5 0 0 4.5 0 10c0 4.4 2.9 8.1 6.9 9.4.5.1.7-.2.7-.5v-1.7c-2.8.6-3.4-1.2-3.4-1.2-.4-1-1-1.3-1-1.3-.8-.6.1-.6.1-.6.9.1 1.4.9 1.4.9.8 1.4 2.1 1 2.6.8.1-.6.3-1 .5-1.2-2.2-.2-4.5-1.1-4.5-4.8 0-1 .4-1.8 1-2.5-.1-.2-.4-1.1.1-2.2 0 0 .8-.3 2.5 1a8.6 8.6 0 0 1 4.5 0c1.7-1.3 2.5-1 2.5-1 .5 1.1.2 2 .1 2.2.6.7 1 1.5 1 2.5 0 3.7-2.3 4.6-4.5 4.8.3.3.6.8.6 1.7v2.5c0 .3.2.6.7.5A10 10 0 0 0 10 0z"/></svg></a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
 
-  <section>
-    <h2>Skills</h2>
-    <ul>
-      <li>Leadership</li>
-      <li>Public Speaking</li>
-      <li>Organizational Planning</li>
-      <li>Communication</li>
-      <li>Typing Speed: 130+ WPM</li>
-    </ul>
-  </section>
+    <!-- Testimonials Section (Bonus) -->
+    <section id="testimonials" class="section testimonials-section" tabindex="-1">
+      <div class="container">
+        <h2 class="section-title">What Our Clients Say</h2>
+        <div class="testimonials-grid">
+          <div class="testimonial-card">
+            <blockquote>
+              “Velza Solutions delivered an AI chatbot that transformed our customer support. Professional, innovative, and reliable!”
+            </blockquote>
+            <div class="testimonial-meta">
+              <img src="assets/client1-logo.svg" alt="Client Company Logo" class="testimonial-logo" />
+              <span class="testimonial-author">Emily Carter</span>
+              <span class="testimonial-title">Head of Customer Experience, Acme Corp</span>
+            </div>
+          </div>
+          <div class="testimonial-card">
+            <blockquote>
+              “Their automated workflow integration saved us countless hours. Highly recommended for any business embracing AI.”
+            </blockquote>
+            <div class="testimonial-meta">
+              <img src="assets/client2-logo.svg" alt="Client Company Logo" class="testimonial-logo" />
+              <span class="testimonial-author">Michael Lee</span>
+              <span class="testimonial-title">COO, FinTech Innovations</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
 
-  <section>
-    <h2>Languages</h2>
-    <p>English (Fluent), Punjabi (Conversational)</p>
-  </section>
+    <!-- Blog/News Section (Bonus) -->
+    <section id="blog" class="section blog-section" tabindex="-1">
+      <div class="container">
+        <h2 class="section-title">Latest Insights</h2>
+        <div class="blog-grid">
+          <article class="blog-card">
+            <img src="assets/blog1.jpg" alt="Blog Post 1" class="blog-thumb" />
+            <div class="blog-info">
+              <h3 class="blog-title">The Future of Faceless AI in Business</h3>
+              <p class="blog-excerpt">Discover how faceless AI is revolutionizing business operations and customer engagement.</p>
+              <a href="#" class="blog-readmore">Read More</a>
+            </div>
+          </article>
+          <article class="blog-card">
+            <img src="assets/blog2.jpg" alt="Blog Post 2" class="blog-thumb" />
+            <div class="blog-info">
+              <h3 class="blog-title">Automating Workflows with AI: A Practical Guide</h3>
+              <p class="blog-excerpt">Step-by-step strategies for integrating AI automation into your business processes.</p>
+              <a href="#" class="blog-readmore">Read More</a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
 
-  <section class="contact">
-    <h2>Contact</h2>
-    <p>Email: <a href="mailto:jaskiratsoodan23@gmail.com">jaskiratsoodan23@gmail.com</a></p>
-    <p>Phone: <a href="tel:+13312031291">+1 (331) 203-1291</a></p>
-    <p>Location: Naperville, IL</p>
-  </section>
+    <!-- Newsletter Signup (Bonus) -->
+    <section id="newsletter" class="section newsletter-section" tabindex="-1">
+      <div class="container">
+        <h2 class="section-title">Stay Updated</h2>
+        <form id="newsletter-form" class="newsletter-form" autocomplete="off">
+          <label for="newsletter-email" class="visually-hidden">Email address</label>
+          <input type="email" id="newsletter-email" name="email" placeholder="Your email address" required aria-required="true" />
+          <button type="submit" class="newsletter-btn">Subscribe</button>
+        </form>
+        <div id="newsletter-feedback" class="form-feedback" aria-live="polite"></div>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="section contact-section" tabindex="-1">
+      <div class="container">
+        <h2 class="section-title">Contact Us</h2>
+        <form id="contact-form" class="contact-form" autocomplete="off" novalidate>
+          <div class="form-group">
+            <label for="contact-name">Name <span aria-hidden="true">*</span></label>
+            <input type="text" id="contact-name" name="name" required aria-required="true" />
+          </div>
+          <div class="form-group">
+            <label for="contact-email">Email <span aria-hidden="true">*</span></label>
+            <input type="email" id="contact-email" name="email" required aria-required="true" />
+          </div>
+          <div class="form-group">
+            <label for="contact-subject">Subject</label>
+            <input type="text" id="contact-subject" name="subject" />
+          </div>
+          <div class="form-group">
+            <label for="contact-message">Message</label>
+            <textarea id="contact-message" name="message" rows="5" required aria-required="true"></textarea>
+          </div>
+          <button type="submit" class="contact-btn">Submit</button>
+          <div id="contact-feedback" class="form-feedback" aria-live="polite"></div>
+        </form>
+        <div class="contact-socials">
+          <a href="#" aria-label="Velza Solutions on LinkedIn"><svg width="24" height="24" fill="currentColor"><path d="M4 4h3v12H4zM5.5 2.5A1.5 1.5 0 1 1 5.5 5a1.5 1.5 0 0 1 0-3zM8 8h3v2h.1a3.3 3.3 0 0 1 3-1.7c3.2 0 3.8 2.1 3.8 4.8V16h-3v-3.3c0-.8 0-1.8-1.1-1.8-1.1 0-1.3.9-1.3 1.8V16h-3V8z"/></svg></a>
+          <a href="#" aria-label="Velza Solutions on Twitter"><svg width="24" height="24" fill="currentColor"><path d="M20 3.9a8.2 8.2 0 0 1-2.4.7A4.1 4.1 0 0 0 19.4 2c-.8.5-1.7.9-2.6 1.1A4.1 4.1 0 0 0 9.8 7.1a11.7 11.7 0 0 1-8.5-4.3c-.4.7-.6 1.5-.6 2.3 0 1.6.8 3 2.1 3.8a4.1 4.1 0 0 1-1.9-.5v.1c0 2.2 1.6 4 3.7 4.4a4.1 4.1 0 0 1-1.9.1c.5 1.6 2 2.7 3.7 2.7A8.3 8.3 0 0 1 2 17.5a11.7 11.7 0 0 0 6.3 1.8c7.5 0 11.6-6.2 11.6-11.6v-.5A8.2 8.2 0 0 0 20 3.9z"/></svg></a>
+          <a href="#" aria-label="Velza Solutions on GitHub"><svg width="24" height="24" fill="currentColor"><path d="M10 0C4.5 0 0 4.5 0 10c0 4.4 2.9 8.1 6.9 9.4.5.1.7-.2.7-.5v-1.7c-2.8.6-3.4-1.2-3.4-1.2-.4-1-1-1.3-1-1.3-.8-.6.1-.6.1-.6.9.1 1.4.9 1.4.9.8 1.4 2.1 1 2.6.8.1-.6.3-1 .5-1.2-2.2-.2-4.5-1.1-4.5-4.8 0-1 .4-1.8 1-2.5-.1-.2-.4-1.1.1-2.2 0 0 .8-.3 2.5 1a8.6 8.6 0 0 1 4.5 0c1.7-1.3 2.5-1 2.5-1 .5 1.1.2 2 .1 2.2.6.7 1 1.5 1 2.5 0 3.7-2.3 4.6-4.5 4.8.3.3.6.8.6 1.7v2.5c0 .3.2.6.7.5A10 10 0 0 0 10 0z"/></svg></a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-info">
+        <span>© <span id="year"></span> Velza Solutions. All rights reserved.</span>
+        <span>123 AI Avenue, Tech City, Country</span>
+        <span>Phone: +1 (555) 123-4567 | Email: <a href="mailto:info@velzasolutions.com">info@velzasolutions.com</a></span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Multi-language Support Placeholder -->
+  <!-- Future: Add language switcher and i18n support -->
+
+  <!-- Main JavaScript -->
+  <script src="js/main.js"></script>
 </body>
 </html>
+
+
+
+
+/* 
+================================================================================
+css/styles.css
+================================================================================
+*/
+
+/* 
+--------------------------------------------------------------------------------
+Root Variables & Base Styles
+--------------------------------------------------------------------------------
+*/
+:root {
+  --color-bg: #fff;
+  --color-bg-dark: #10131a;
+  --color-text: #444;
+  --color-text-dark: #e0e0e0;
+  --color-outline: #00000022;
+  --color-primary: #1e90ff;
+  --color-accent: #00bcd4;
+  --color-shadow: 0 2px 16px 0 rgba(30, 144, 255, 0.08);
+  --color-shadow-dark: 0 2px 16px 0 rgba(0,0,0,0.25);
+  --color-border: #e0e0e0;
+  --color-border-dark: #222;
+  --color-cta: #1e90ff;
+  --color-cta-hover: #1565c0;
+  --color-error: #e53935;
+  --color-success: #43a047;
+  --font-main: 'Inter', Arial, Helvetica, sans-serif;
+  --transition: 0.25s cubic-bezier(.4,0,.2,1);
+  --header-height: 80px;
+  --z-header: 100;
+  --z-modal: 200;
+  --z-cursor: 300;
+  --z-preloader: 400;
+}
+
+[data-theme="dark"] {
+  --color-bg: var(--color-bg-dark);
+  --color-text: var(--color-text-dark);
+  --color-outline: #fff2;
+  --color-shadow: var(--color-shadow-dark);
+  --color-border: var(--color-border-dark);
+}
+
+html {
+  box-sizing: border-box;
+  font-size: 18px;
+  scroll-behavior: smooth;
+}
+
+*, *::before, *::after {
+  box-sizing: inherit;
+}
+
+body {
+  font-family: var(--font-main);
+  background: var(--color-bg);
+  color: var(--color-text);
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  line-height: 1.7;
+  letter-spacing: 0.01em;
+  transition: background var(--transition), color var(--transition);
+  overflow-x: hidden;
+}
+
+/* 
+--------------------------------------------------------------------------------
+Typography
+--------------------------------------------------------------------------------
+*/
+h1, h2, h3, h4, h5, h6 {
+  color: var(--color-text);
+  font-family: var(--font-main);
+  font-weight: 700;
+  margin: 0 0 0.5em 0;
+  letter-spacing: 0.01em;
+  text-shadow: 0 1px 0 var(--color-outline);
+}
+
+.section-title {
+  font-size: 2.2rem;
+  margin-bottom: 1.5rem;
+  text-align: center;
+  position: relative;
+  z-index: 1;
+}
+
+p, ul, ol {
+  color: var(--color-text);
+  font-size: 1.05rem;
+  margin-bottom: 1em;
+}
+
+a {
+  color: var(--color-primary);
+  text-decoration: none;
+  transition: color var(--transition);
+}
+
+a:hover, a:focus {
+  color: var(--color-accent);
+  outline: none;
+}
+
+.visually-hidden {
+  position: absolute !important;
+  height: 1px; width: 1px;
+  overflow: hidden;
+  clip: rect(1px, 1px, 1px, 1px);
+  white-space: nowrap;
+}
+
+/* 
+--------------------------------------------------------------------------------
+Header & Navigation
+--------------------------------------------------------------------------------
+*/
+.header {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  height: var(--header-height);
+  background: var(--color-bg);
+  box-shadow: var(--color-shadow);
+  z-index: var(--z-header);
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  transition: background var(--transition), box-shadow var(--transition);
+}
+
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: var(--header-height);
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.navbar-brand {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.logo {
+  width: 48px;
+  height: 48px;
+  border-radius: 12px;
+  background: #e0f7fa;
+  box-shadow: 0 2px 8px #00bcd422;
+  object-fit: contain;
+}
+
+.brand-text {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.company-name {
+  font-size: 1.7rem;
+  font-weight: 700;
+  color: var(--color-text);
+  letter-spacing: 0.04em;
+  text-shadow: 0 1px 0 var(--color-outline);
+}
+
+.tagline {
+  font-size: 1rem;
+  color: var(--color-accent);
+  font-weight: 500;
+  margin-top: 0.1em;
+  letter-spacing: 0.02em;
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  transition: all var(--transition);
+}
+
+.nav-link {
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: var(--color-text);
+  padding: 0.5em 0.8em;
+  border-radius: 6px;
+  transition: background var(--transition), color var(--transition);
+  position: relative;
+}
+
+.nav-link.active, .nav-link:focus {
+  background: var(--color-accent);
+  color: #fff;
+  box-shadow: 0 2px 8px #00bcd422;
+}
+
+.nav-toggle {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  margin-left: 1rem;
+  padding: 0.5em;
+  z-index: 2;
+}
+
+.hamburger, .hamburger::before, .hamburger::after {
+  display: block;
+  width: 28px;
+  height: 3px;
+  background: var(--color-text);
+  border-radius: 2px;
+  transition: all var(--transition);
+  position: relative;
+}
+
+.hamburger::before, .hamburger::after {
+  content: '';
+  position: absolute;
+  left: 0;
+}
+
+.hamburger::before {
+  top: -9px;
+}
+
+.hamburger::after {
+  top: 9px;
+}
+
+/* Hamburger open state (JS toggles .open) */
+.nav-toggle.open .hamburger {
+  background: transparent;
+}
+.nav-toggle.open .hamburger::before {
+  transform: translateY(9px) rotate(45deg);
+}
+.nav-toggle.open .hamburger::after {
+  transform: translateY(-9px) rotate(-45deg);
+}
+
+.header-cta {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: -1.5rem;
+}
+
+.cta-btn {
+  display: inline-block;
+  background: var(--color-cta);
+  color: #fff;
+  font-size: 1.1rem;
+  font-weight: 600;
+  padding: 0.9em 2.2em;
+  border-radius: 32px;
+  box-shadow: 0 2px 16px #1e90ff22;
+  margin-top: 0.5em;
+  transition: background var(--transition), box-shadow var(--transition), transform var(--transition);
+  border: none;
+  cursor: pointer;
+  outline: none;
+  text-align: center;
+}
+
+.cta-btn:hover, .cta-btn:focus {
+  background: var(--color-cta-hover);
+  box-shadow: 0 4px 24px #1e90ff33;
+  transform: translateY(-2px) scale(1.04);
+}
+
+/* 
+--------------------------------------------------------------------------------
+Dark Mode Toggle
+--------------------------------------------------------------------------------
+*/
+.dark-mode-toggle {
+  background: none;
+  border: none;
+  cursor: pointer;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background var(--transition);
+  margin-left: 1rem;
+}
+
+.toggle-icon {
+  width: 24px;
+  height: 24px;
+  display: block;
+  background: url('../assets/darkmode-toggle.svg') center/contain no-repeat;
+}
+
+/* 
+--------------------------------------------------------------------------------
+Sections & Layout
+--------------------------------------------------------------------------------
+*/
+main {
+  margin-top: var(--header-height);
+}
+
+.section {
+  padding: 5rem 0 4rem 0;
+  background: var(--color-bg);
+  position: relative;
+  z-index: 1;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+/* 
+--------------------------------------------------------------------------------
+About Section
+--------------------------------------------------------------------------------
+*/
+.about-section {
+  background: var(--color-bg);
+  box-shadow: 0 2px 24px #00bcd408;
+  border-radius: 24px;
+  margin: 2rem 0;
+  overflow: hidden;
+}
+
+.about-content {
+  display: flex;
+  align-items: flex-start;
+  gap: 3rem;
+  flex-wrap: wrap;
+}
+
+.about-text {
+  flex: 2;
+  min-width: 260px;
+}
+
+.about-highlights {
+  list-style: none;
+  padding: 0;
+  margin: 1.5em 0;
+}
+
+.about-highlights li {
+  display: flex;
+  align-items: center;
+  gap: 1em;
+  margin-bottom: 1em;
+  font-size: 1.05rem;
+}
+
+.about-icon {
+  color: var(--color-accent);
+  background: #e0f7fa;
+  border-radius: 50%;
+  padding: 0.4em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.about-illustration {
+  flex: 1;
+  min-width: 220px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.about-illustration img {
+  width: 100%;
+  max-width: 320px;
+  border-radius: 16px;
+  box-shadow: 0 2px 16px #00bcd422;
+}
+
+/* 
+--------------------------------------------------------------------------------
+Services Section
+--------------------------------------------------------------------------------
+*/
+.services-section {
+  background: linear-gradient(180deg, #fff 80%, #e0f7fa 100%);
+}
+
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 2.5rem;
+  margin-top: 2.5rem;
+}
+
+.service-card {
+  background: #fff;
+  border-radius: 18px;
+  box-shadow: 0 2px 16px #1e90ff11;
+  padding: 2.2rem 1.5rem 1.5rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: box-shadow var(--transition), transform var(--transition), background var(--transition);
+  cursor: pointer;
+  border: 1px solid var(--color-border);
+  outline: none;
+}
+
+.service-card:focus, .service-card:hover {
+  box-shadow: 0 6px 32px #1e90ff22;
+  transform: translateY(-4px) scale(1.03);
+  background: #e0f7fa;
+}
+
+.service-icon {
+  margin-bottom: 1.2rem;
+  color: var(--color-accent);
+}
+
+.service-title {
+  font-size: 1.25rem;
+  font-weight: 700;
+  margin-bottom: 0.7rem;
+  text-align: center;
+}
+
+.service-desc {
+  font-size: 1rem;
+  color: var(--color-text);
+  margin-bottom: 1.2rem;
+  text-align: center;
+}
+
+.learn-more-btn {
+  background: var(--color-primary);
+  color: #fff;
+  border: none;
+  border-radius: 24px;
+  padding: 0.6em 1.6em;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background var(--transition), box-shadow var(--transition), transform var(--transition);
+  box-shadow: 0 2px 8px #1e90ff22;
+}
+
+.learn-more-btn:hover, .learn-more-btn:focus {
+  background: var(--color-cta-hover);
+  box-shadow: 0 4px 16px #1e90ff33;
+  transform: scale(1.04);
+}
+
+/* 
+--------------------------------------------------------------------------------
+Modal Styles
+--------------------------------------------------------------------------------
+*/
+.modal {
+  display: none;
+  position: fixed;
+  z-index: var(--z-modal);
+  left: 0; top: 0; width: 100vw; height: 100vh;
+  background: rgba(16, 19, 26, 0.18);
+  align-items: center;
+  justify-content: center;
+  transition: opacity var(--transition);
+}
+
+.modal.open {
+  display: flex;
+  animation: fadeIn 0.3s;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.modal-content {
+  background: var(--color-bg);
+  border-radius: 18px;
+  box-shadow: 0 8px 32px #1e90ff33;
+  padding: 2.5rem 2rem;
+  max-width: 480px;
+  width: 90vw;
+  position: relative;
+  animation: slideInUp 0.3s;
+}
+
+@keyframes slideInUp {
+  from { transform: translateY(40px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+.modal-close {
+  position: absolute;
+  top: 1.2rem; right: 1.2rem;
+  background: none;
+  border: none;
+  font-size: 2rem;
+  color: var(--color-accent);
+  cursor: pointer;
+  transition: color var(--transition);
+}
+
+.modal-close:hover, .modal-close:focus {
+  color: var(--color-cta-hover);
+}
+
+/* 
+--------------------------------------------------------------------------------
+Portfolio Section
+--------------------------------------------------------------------------------
+*/
+.portfolio-section {
+  background: linear-gradient(180deg, #e0f7fa 0%, #fff 100%);
+}
+
+.portfolio-filters {
+  display: flex;
+  justify-content: center;
+  gap: 1.2rem;
+  margin-bottom: 2.5rem;
+}
+
+.filter-btn {
+  background: #fff;
+  color: var(--color-primary);
+  border: 1px solid var(--color-primary);
+  border-radius: 18px;
+  padding: 0.5em 1.5em;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background var(--transition), color var(--transition), border var(--transition);
+}
+
+.filter-btn.active, .filter-btn:focus {
+  background: var(--color-primary);
+  color: #fff;
+  border-color: var(--color-primary);
+}
+
+.portfolio-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 2rem;
+}
+
+.portfolio-item {
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 2px 16px #1e90ff11;
+  overflow: hidden;
+  cursor: pointer;
+  transition: box-shadow var(--transition), transform var(--transition);
+  border: 1px solid var(--color-border);
+  outline: none;
+}
+
+.portfolio-item:hover, .portfolio-item:focus {
+  box-shadow: 0 6px 32px #1e90ff22;
+  transform: translateY(-4px) scale(1.03);
+}
+
+.portfolio-thumb {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  display: block;
+}
+
+.portfolio-info {
+  padding: 1.2rem 1rem;
+}
+
+.portfolio-info h4 {
+  font-size: 1.1rem;
+  font-weight: 700;
+  margin-bottom: 0.5em;
+}
+
+.portfolio-info p {
+  font-size: 0.98rem;
+  color: var(--color-text);
+}
+
+/* 
+--------------------------------------------------------------------------------
+Team Section
+--------------------------------------------------------------------------------
+*/
+.team-section {
+  background: #fff;
+}
+
+.team-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 2.5rem;
+  margin-top: 2.5rem;
+}
+
+.team-card {
+  background: #e0f7fa;
+  border-radius: 18px;
+  box-shadow: 0 2px 16px #00bcd411;
+  padding: 2.2rem 1.5rem 1.5rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: box-shadow var(--transition), transform var(--transition), background var(--transition);
+  cursor: pointer;
+  border: 1px solid var(--color-border);
+  outline: none;
+  position: relative;
+  overflow: hidden;
+}
+
+.team-card:focus, .team-card:hover {
+  box-shadow: 0 6px 32px #00bcd422;
+  transform: translateY(-4px) scale(1.03);
+  background: #fff;
+}
+
+.team-photo img {
+  width: 96px;
+  height: 96px;
+  border-radius: 50%;
+  object-fit: cover;
+  box-shadow: 0 2px 8px #00bcd422;
+  margin-bottom: 1.2rem;
+}
+
+.team-info h3 {
+  font-size: 1.15rem;
+  font-weight: 700;
+  margin-bottom: 0.2em;
+  text-align: center;
+}
+
+.team-title {
+  font-size: 1rem;
+  color: var(--color-accent);
+  margin-bottom: 0.5em;
+  text-align: center;
+}
+
+.team-bio {
+  font-size: 0.98rem;
+  color: var(--color-text);
+  margin-bottom: 1em;
+  text-align: center;
+}
+
+.team-socials {
+  display: flex;
+  gap: 1em;
+  justify-content: center;
+}
+
+.team-socials a {
+  color: var(--color-primary);
+  background: #fff;
+  border-radius: 50%;
+  padding: 0.4em;
+  transition: background var(--transition), color var(--transition);
+}
+
+.team-socials a:hover, .team-socials a:focus {
+  background: var(--color-primary);
+  color: #fff;
+}
+
+/* 
+--------------------------------------------------------------------------------
+Testimonials Section (Bonus)
+--------------------------------------------------------------------------------
+*/
+.testimonials-section {
+  background: linear-gradient(180deg, #e0f7fa 0%, #fff 100%);
+}
+
+.testimonials-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 2.5rem;
+  margin-top: 2.5rem;
+}
+
+.testimonial-card {
+  background: #fff;
+  border-radius: 18px;
+  box-shadow: 0 2px 16px #1e90ff11;
+  padding: 2rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  border: 1px solid var(--color-border);
+}
+
+.testimonial-card blockquote {
+  font-size: 1.1rem;
+  font-style: italic;
+  color: var(--color-text);
+  margin: 0 0 1.2em 0;
+}
+
+.testimonial-meta {
+  display: flex;
+  align-items: center;
+  gap: 1em;
+}
+
+.testimonial-logo {
+  width: 36px;
+  height: 36px;
+  object-fit: contain;
+  border-radius: 8px;
+  background: #e0f7fa;
+}
+
+.testimonial-author {
+  font-weight: 700;
+  color: var(--color-primary);
+}
+
+.testimonial-title {
+  font-size: 0.95rem;
+  color: var(--color-text);
+}
+
+/* 
+--------------------------------------------------------------------------------
+Blog/News Section (Bonus)
+--------------------------------------------------------------------------------
+*/
+.blog-section {
+  background: #fff;
+}
+
+.blog-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 2.5rem;
+  margin-top: 2.5rem;
+}
+
+.blog-card {
+  background: #e0f7fa;
+  border-radius: 18px;
+  box-shadow: 0 2px 16px #00bcd411;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: box-shadow var(--transition), transform var(--transition);
+}
+
+.blog-card:hover, .blog-card:focus-within {
+  box-shadow: 0 6px 32px #00bcd422;
+  transform: translateY(-4px) scale(1.03);
+}
+
+.blog-thumb {
+  width: 100%;
+  height: 160px;
+  object-fit: cover;
+  display: block;
+}
+
+.blog-info {
+  padding: 1.2rem 1rem;
+}
+
+.blog-title {
+  font-size: 1.1rem;
+  font-weight: 700;
+  margin-bottom: 0.5em;
+}
+
+.blog-excerpt {
+  font-size: 0.98rem;
+  color: var(--color-text);
+  margin-bottom: 1em;
+}
+
+.blog-readmore {
+  color: var(--color-primary);
+  font-weight: 600;
+  text-decoration: underline;
+  font-size: 1rem;
+}
+
+/* 
+--------------------------------------------------------------------------------
+Newsletter Section (Bonus)
+--------------------------------------------------------------------------------
+*/
+.newsletter-section {
+  background: linear-gradient(180deg, #fff 80%, #e0f7fa 100%);
+  text-align: center;
+}
+
+.newsletter-form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1em;
+  margin-top: 1.5em;
+}
+
+.newsletter-form input[type="email"] {
+  padding: 0.7em 1.2em;
+  border-radius: 24px;
+  border: 1px solid var(--color-border);
+  font-size: 1rem;
+  outline: none;
+  transition: border var(--transition);
+}
+
+.newsletter-form input[type="email"]:focus {
+  border-color: var(--color-primary);
+}
+
+.newsletter-btn {
+  background: var(--color-primary);
+  color: #fff;
+  border: none;
+  border-radius: 24px;
+  padding: 0.7em 2em;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background var(--transition), box-shadow var(--transition), transform var(--transition);
+  box-shadow: 0 2px 8px #1e90ff22;
+}
+
+.newsletter-btn:hover, .newsletter-btn:focus {
+  background: var(--color-cta-hover);
+  box-shadow: 0 4px 16px #1e90ff33;
+  transform: scale(1.04);
+}
+
+/* 
+--------------------------------------------------------------------------------
+Contact Section
+--------------------------------------------------------------------------------
+*/
+.contact-section {
+  background: #fff;
+}
+
+.contact-form {
+  max-width: 520px;
+  margin: 0 auto 2.5rem auto;
+  display: flex;
+  flex-direction: column;
+  gap: 1.2em;
+  background: #e0f7fa;
+  border-radius: 18px;
+  box-shadow: 0 2px 16px #00bcd411;
+  padding: 2.2rem 1.5rem 1.5rem 1.5rem;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3em;
+}
+
+.contact-form label {
+  font-weight: 600;
+  color: var(--color-text);
+}
+
+.contact-form input, .contact-form textarea {
+  padding: 0.7em 1em;
+  border-radius: 8px;
+  border: 1px solid var(--color-border);
+  font-size: 1rem;
+  outline: none;
+  transition: border var(--transition);
+  background: #fff;
+  color: var(--color-text);
+}
+
+.contact-form input:focus, .contact-form textarea:focus {
+  border-color: var(--color-primary);
+}
+
+.contact-btn {
+  background: var(--color-primary);
+  color: #fff;
+  border: none;
+  border-radius: 24px;
+  padding: 0.7em 2em;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background var(--transition), box-shadow var(--transition), transform var(--transition);
+  box-shadow: 0 2px 8px #1e90ff22;
+}
+
+.contact-btn:hover, .contact-btn:focus {
+  background: var(--color-cta-hover);
+  box-shadow: 0 4px 16px #1e90ff33;
+  transform: scale(1.04);
+}
+
+.form-feedback {
+  margin-top: 0.7em;
+  font-size: 1rem;
+  color: var(--color-success);
+  min-height: 1.2em;
+}
+
+.form-feedback.error {
+  color: var(--color-error);
+}
+
+.contact-socials {
+  display: flex;
+  gap: 1.2em;
+  justify-content: center;
+  margin-top: 1.5em;
+}
+
+.contact-socials a {
+  color: var(--color-primary);
+  background: #fff;
+  border-radius: 50%;
+  padding: 0.5em;
+  transition: background var(--transition), color var(--transition);
+}
+
+.contact-socials a:hover, .contact-socials a:focus {
+  background: var(--color-primary);
+  color: #fff;
+}
+
+/* 
+--------------------------------------------------------------------------------
+Footer
+--------------------------------------------------------------------------------
+*/
+.footer {
+  background: #e0f7fa;
+  color: var(--color-text);
+  padding: 2rem 0;
+  text-align: center;
+  font-size: 1rem;
+  border-top: 1px solid var(--color-border);
+}
+
+.footer-info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5em;
+  align-items: center;
+}
+
+.footer a {
+  color: var(--color-primary);
+  text-decoration: underline;
+}
+
+/* 
+--------------------------------------------------------------------------------
+Preloader (Custom Loading Animation)
+--------------------------------------------------------------------------------
+*/
+#preloader {
+  position: fixed;
+  z-index: var(--z-preloader);
+  left: 0; top: 0; width: 100vw; height: 100vh;
+  background: linear-gradient(180deg, #e0f7fa 0%, #fff 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  transition: opacity 0.4s;
+}
+
+#preloader-canvas {
+  width: 120px;
+  height: 120px;
+  display: block;
+  margin-bottom: 1.5em;
+}
+
+.preloader-text {
+  font-size: 1.5rem;
+  color: var(--color-primary);
+  font-weight: 700;
+  letter-spacing: 0.08em;
+}
+
+/* 
+--------------------------------------------------------------------------------
+Water Ripple Cursor Canvas
+--------------------------------------------------------------------------------
+*/
+#ripple-cursor {
+  position: fixed;
+  left: 0; top: 0;
+  width: 100vw; height: 100vh;
+  pointer-events: none;
+  z-index: var(--z-cursor);
+  opacity: 1;
+  transition: opacity 0.3s;
+}
+
+/* 
+--------------------------------------------------------------------------------
+Animations & Transitions
+--------------------------------------------------------------------------------
+*/
+@media (prefers-reduced-motion: no-preference) {
+  .section,
+  .service-card,
+  .portfolio-item,
+  .team-card,
+  .testimonial-card,
+  .blog-card {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: opacity 0.7s cubic-bezier(.4,0,.2,1), transform 0.7s cubic-bezier(.4,0,.2,1);
+  }
+  .section.visible,
+  .service-card.visible,
+  .portfolio-item.visible,
+  .team-card.visible,
+  .testimonial-card.visible,
+  .blog-card.visible {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+/* 
+--------------------------------------------------------------------------------
+Responsive Design
+--------------------------------------------------------------------------------
+*/
+@media (max-width: 900px) {
+  .about-content {
+    flex-direction: column;
+    gap: 2rem;
+  }
+  .navbar {
+    padding: 0 1rem;
+  }
+  .container {
+    padding: 0 1rem;
+  }
+}
+
+@media (max-width: 700px) {
+  .nav-links {
+    position: fixed;
+    top: var(--header-height);
+    right: 0;
+    background: var(--color-bg);
+    flex-direction: column;
+    gap: 1.5rem;
+    width: 220px;
+    height: calc(100vh - var(--header-height));
+    box-shadow: -2px 0 16px #1e90ff11;
+    transform: translateX(100%);
+    transition: transform var(--transition);
+    padding: 2rem 1rem;
+    z-index: var(--z-header);
+  }
+  .nav-links.open {
+    transform: translateX(0);
+  }
+  .nav-toggle {
+    display: block;
+  }
+  .header-cta {
+    margin-top: 0.5rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .section {
+    padding: 3rem 0 2rem 0;
+  }
+  .about-illustration img {
+    max-width: 180px;
+  }
+  .footer-info {
+    font-size: 0.95rem;
+  }
+}
+
+/* 
+--------------------------------------------------------------------------------
+Accessibility: Focus States
+--------------------------------------------------------------------------------
+*/
+:focus {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 2px;
+}
+
+/* 
+--------------------------------------------------------------------------------
+Lazy Loading Images
+--------------------------------------------------------------------------------
+*/
+img[loading="lazy"] {
+  filter: blur(0.8px);
+  transition: filter 0.3s;
+}
+img[loading="lazy"].loaded {
+  filter: none;
+}
+
+/* 
+--------------------------------------------------------------------------------
+End of styles.css
+--------------------------------------------------------------------------------
+*/
+
+
+/* 
+================================================================================
+js/main.js
+================================================================================
+*/
+
+// Main JavaScript for Velza Solutions Website
+// - Handles navigation, modals, animations, water ripple cursor, etc.
+
+document.addEventListener('DOMContentLoaded', function () {
+  // =========================
+  // 1. Navigation & Scroll
+  // =========================
+  const navLinks = document.querySelectorAll('.nav-link');
+  const sections = document.querySelectorAll('main > section');
+  const navToggle = document.getElementById('nav-toggle');
+  const navLinksContainer = document.getElementById('nav-links');
+  const header = document.getElementById('header');
+
+  // Smooth scroll for nav links
+  navLinks.forEach(link => {
+    link.addEventListener('click', function (e) {
+      const targetId = this.getAttribute('href').slice(1);
+      const target = document.getElementById(targetId);
+      if (target) {
+        e.preventDefault();
+        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        // Close mobile nav
+        navLinksContainer.classList.remove('open');
+        navToggle.classList.remove('open');
+        navToggle.setAttribute('aria-expanded', 'false');
+      }
+    });
+  });
+
+  // Highlight active nav link on scroll
+  function updateActiveNav() {
+    let scrollPos = window.scrollY + header.offsetHeight + 10;
+    sections.forEach(section => {
+      if (scrollPos >= section.offsetTop && scrollPos < section.offsetTop + section.offsetHeight) {
+        navLinks.forEach(link => link.classList.remove('active'));
+        const activeLink = document.querySelector(`.nav-link[href="#${section.id}"]`);
+        if (activeLink) activeLink.classList.add('active');
+      }
+    });
+  }
+  window.addEventListener('scroll', updateActiveNav);
+  updateActiveNav();
+
+  // Hamburger menu toggle
+  navToggle.addEventListener('click', function () {
+    navLinksContainer.classList.toggle('open');
+    navToggle.classList.toggle('open');
+    navToggle.setAttribute('aria-expanded', navLinksContainer.classList.contains('open'));
+  });
+
+  // Close nav on outside click (mobile)
+  document.addEventListener('click', function (e) {
+    if (window.innerWidth < 700 && !navLinksContainer.contains(e.target) && !navToggle.contains(e.target)) {
+      navLinksContainer.classList.remove('open');
+      navToggle.classList.remove('open');
+      navToggle.setAttribute('aria-expanded', 'false');
+    }
+  });
+
+  // CTA Button scroll
+  document.getElementById('explore-services-btn').addEventListener('click', function (e) {
+    e.preventDefault();
+    document.getElementById('services').scrollIntoView({ behavior: 'smooth', block: 'start' });
+  });
+
+  // =========================
+  // 2. Section Animations
+  // =========================
+  // Animate sections/cards on scroll (fade/slide in)
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.15 });
+
+  document.querySelectorAll('.section, .service-card, .portfolio-item, .team-card, .testimonial-card, .blog-card').forEach(el => {
+    observer.observe(el);
+  });
+
+  // =========================
+  // 3. Services Modal
+  // =========================
+  const serviceModal = document.getElementById('service-modal');
+  const modalClose = document.getElementById('modal-close');
+  const modalBody = document.getElementById('modal-body');
+  const serviceDetails = {
+    chatbot: {
+      title: "AI Chatbot Development",
+      content: `<p>We design and deploy advanced conversational AI agents that automate customer support, sales, and engagement. Our chatbots are tailored to your brand and integrate seamlessly with your platforms.</p>
+      <ul>
+        <li>24/7 automated support</li>
+        <li>Natural language understanding</li>
+        <li>Omnichannel integration</li>
+        <li>Customizable workflows</li>
+      </ul>`
+    },
+    workflow: {
+      title: "Automated Workflow Integration",
+      content: `<p>Streamline your business operations with AI-driven automation. We connect your tools and processes, reducing manual work and increasing efficiency.</p>
+      <ul>
+        <li>End-to-end process automation</li>
+        <li>Seamless API integrations</li>
+        <li>Real-time monitoring</li>
+        <li>Scalable solutions</li>
+      </ul>`
+    },
+    ml: {
+      title: "Custom Machine Learning Models",
+      content: `<p>Our data scientists build bespoke machine learning models to solve your unique business challenges, from predictive analytics to recommendation engines.</p>
+      <ul>
+        <li>Supervised & unsupervised learning</li>
+        <li>Model deployment & monitoring</li>
+        <li>Data preprocessing & feature engineering</li>
+        <li>Explainable AI</li>
+      </ul>`
+    },
+    analytics: {
+      title: "AI-Driven Data Analytics",
+      content: `<p>Unlock actionable insights from your data with our AI-powered analytics and reporting solutions. Make informed decisions with confidence.</p>
+      <ul>
+        <li>Custom dashboards</li>
+        <li>Automated reporting</li>
+        <li>Data visualization</li>
+        <li>Business intelligence</li>
+      </ul>`
+    }
+  };
+
+  document.querySelectorAll('.learn-more-btn').forEach(btn => {
+    btn.addEventListener('click', function () {
+      const key = this.getAttribute('data-service');
+      if (serviceDetails[key]) {
+        modalBody.innerHTML = `<h4>${serviceDetails[key].title}</h4>${serviceDetails[key].content}`;
+        serviceModal.classList.add('open');
+        serviceModal.setAttribute('aria-hidden', 'false');
+        modalClose.focus();
+      }
+    });
+  });
+
+  modalClose.addEventListener('click', closeServiceModal);
+  serviceModal.addEventListener('click', function (e) {
+    if (e.target === serviceModal) closeServiceModal();
+  });
+  document.addEventListener('keydown', function (e) {
+    if (serviceModal.classList.contains('open') && e.key === 'Escape') closeServiceModal();
+  });
+  function closeServiceModal() {
+    serviceModal.classList.remove('open');
+    serviceModal.setAttribute('aria-hidden', 'true');
+  }
+
+  // =========================
+  // 4. Portfolio Lightbox
+  // =========================
+  const portfolioModal = document.getElementById('portfolio-modal');
+  const portfolioModalClose = document.getElementById('portfolio-modal-close');
+  const portfolioModalBody = document.getElementById('portfolio-modal-body');
+  document.querySelectorAll('.portfolio-item').forEach(item => {
+    item.addEventListener('click', function () {
+      const img = this.querySelector('img');
+      const info = this.querySelector('.portfolio-info');
+      portfolioModalBody.innerHTML = `
+        <img src="${img.src}" alt="${img.alt}" style="width:100%;border-radius:12px;margin-bottom:1em;" />
+        <h4>${info.querySelector('h4').textContent}</h4>
+        <p>${info.querySelector('p').textContent}</p>
+        <p><em>Project details and demo coming soon.</em></p>
+      `;
+      portfolioModal.classList.add('open');
+      portfolioModal.setAttribute('aria-hidden', 'false');
+      portfolioModalClose.focus();
+    });
+  });
+  portfolioModalClose.addEventListener('click', closePortfolioModal);
+  portfolioModal.addEventListener('click', function (e) {
+    if (e.target === portfolioModal) closePortfolioModal();
+  });
+  document.addEventListener('keydown', function (e) {
+    if (portfolioModal.classList.contains('open') && e.key === 'Escape') closePortfolioModal();
+  });
+  function closePortfolioModal() {
+    portfolioModal.classList.remove('open');
+    portfolioModal.setAttribute('aria-hidden', 'true');
+  }
+
+  // Portfolio filtering
+  document.querySelectorAll('.filter-btn').forEach(btn => {
+    btn.addEventListener('click', function () {
+      document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+      this.classList.add('active');
+      const filter = this.getAttribute('data-filter');
+      document.querySelectorAll('.portfolio-item').forEach(item => {
+        if (filter === 'all' || item.getAttribute('data-category') === filter) {
+          item.style.display = '';
+        } else {
+          item.style.display = 'none';
+        }
+      });
+    });
+  });
+
+  // =========================
+  // 5. Contact Form Validation
+  // =========================
+  const contactForm = document.getElementById('contact-form');
+  const contactFeedback = document.getElementById('contact-feedback');
+  contactForm.addEventListener('submit', function (e) {
+    e.preventDefault();
+    contactFeedback.textContent = '';
+    contactFeedback.classList.remove('error');
+    // Simple client-side validation
+    const name = contactForm.name.value.trim();
+    const email = contactForm.email.value.trim();
+    const message = contactForm.message.value.trim();
+    if (!name || !email || !message) {
+      contactFeedback.textContent = 'Please fill in all required fields.';
+      contactFeedback.classList.add('error');
+      return;
+    }
+    if (!/^[^@]+@[^@]+\.[^@]+$/.test(email)) {
+      contactFeedback.textContent = 'Please enter a valid email address.';
+      contactFeedback.classList.add('error');
+      return;
+    }
+    // Simulate successful submission
+    contactFeedback.textContent = 'Thank you for your message!';
+    contactForm.reset();
+  });
+
+  // =========================
+  // 6. Newsletter Signup (Bonus)
+  // =========================
+  const newsletterForm = document.getElementById('newsletter-form');
+  const newsletterFeedback = document.getElementById('newsletter-feedback');
+  if (newsletterForm) {
+    newsletterForm.addEventListener('submit', function (e) {
+      e.preventDefault();
+      newsletterFeedback.textContent = '';
+      const email = newsletterForm.email.value.trim();
+      if (!/^[^@]+@[^@]+\.[^@]+$/.test(email)) {
+        newsletterFeedback.textContent = 'Please enter a valid email address.';
+        newsletterFeedback.classList.add('error');
+        return;
+      }
+      // Simulate API call
+      newsletterFeedback.textContent = 'Thank you for subscribing!';
+      newsletterFeedback.classList.remove('error');
+      newsletterForm.reset();
+    });
+  }
+
+  // =========================
+  // 7. Dark Mode Toggle
+  // =========================
+  const darkModeToggle = document.getElementById('dark-mode-toggle');
+  function setTheme(theme) {
+    document.documentElement.setAttribute('data-theme', theme);
+    localStorage.setItem('theme', theme);
+  }
+  function getPreferredTheme() {
+    return localStorage.getItem('theme') || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+  }
+  if (darkModeToggle) {
+    darkModeToggle.addEventListener('click', function () {
+      const current = document.documentElement.getAttribute('data-theme');
+      setTheme(current === 'dark' ? 'light' : 'dark');
+    });
+    setTheme(getPreferredTheme());
+  }
+
+  // =========================
+  // 8. Footer Year
+  // =========================
+  document.getElementById('year').textContent = new Date().getFullYear();
+
+  // =========================
+  // 9. Preloader Animation
+  // =========================
+  const preloader = document.getElementById('preloader');
+  const preloaderCanvas = document.getElementById('preloader-canvas');
+  if (preloader && preloaderCanvas) {
+    // Simple animated fish swimming in a circle
+    const ctx = preloaderCanvas.getContext('2d');
+    let angle = 0;
+    let frame = 0;
+    function drawFish(x, y, size, color) {
+      ctx.save();
+      ctx.translate(x, y);
+      ctx.scale(size, size);
+      ctx.beginPath();
+      ctx.moveTo(0, 0);
+      ctx.quadraticCurveTo(20, -10, 40, 0);
+      ctx.quadraticCurveTo(20, 10, 0, 0);
+      ctx.fillStyle = color;
+      ctx.fill();
+      ctx.beginPath();
+      ctx.arc(35, 0, 3, 0, 2 * Math.PI);
+      ctx.fillStyle = '#fff';
+      ctx.fill();
+      ctx.restore();
+    }
+    function animatePreloader() {
+      ctx.clearRect(0, 0, preloaderCanvas.width, preloaderCanvas.height);
+      let cx = preloaderCanvas.width / 2, cy = preloaderCanvas.height / 2, r = 36;
+      for (let i = 0; i < 3; i++) {
+        let a = angle + i * (2 * Math.PI / 3);
+        let x = cx + r * Math.cos(a);
+        let y = cy + r * Math.sin(a);
+        drawFish(x, y, 0.7 + 0.2 * Math.sin(frame / 10 + i), ['#1e90ff', '#00bcd4', '#1565c0'][i]);
+      }
+      angle += 0.04;
+      frame++;
+      if (preloader.style.display !== 'none') {
+        requestAnimationFrame(animatePreloader);
+      }
+    }
+    animatePreloader();
+    // Hide preloader after window load
+    window.addEventListener('load', function () {
+      setTimeout(() => {
+        preloader.style.opacity = 0;
+        setTimeout(() => preloader.style.display = 'none', 400);
+      }, 800);
+    });
+  }
+
+  // =========================
+  // 10. Water Ripple Cursor
+  // =========================
+  const rippleCanvas = document.getElementById('ripple-cursor');
+  if (rippleCanvas) {
+    let ctx = rippleCanvas.getContext('2d');
+    let ripples = [];
+    let mouse = { x: window.innerWidth / 2, y: window.innerHeight / 2 };
+    function resizeCanvas() {
+      rippleCanvas.width = window.innerWidth;
+      rippleCanvas.height = window.innerHeight;
+    }
+    resizeCanvas();
+    window.addEventListener('resize', resizeCanvas);
+
+    function addRipple(x, y, type = 'move') {
+      ripples.push({
+        x, y,
+        r: 0,
+        maxR: type === 'click' ? 60 : 36,
+        alpha: 0.25,
+        grow: type === 'click' ? 3.5 : 2.2,
+        color: type === 'click' ? '#1e90ff' : '#00bcd4'
+      });
+    }
+
+    document.addEventListener('mousemove', function (e) {
+      mouse.x = e.clientX;
+      mouse.y = e.clientY;
+      addRipple(mouse.x, mouse.y, 'move');
+    });
+    document.addEventListener('mousedown', function (e) {
+      addRipple(e.clientX, e.clientY, 'click');
+    });
+    document.addEventListener('scroll', function () {
+      addRipple(mouse.x, mouse.y, 'move');
+    });
+
+    function animateRipples() {
+      ctx.clearRect(0, 0, rippleCanvas.width, rippleCanvas.height);
+      // Draw ripples
+      for (let i = ripples.length - 1; i >= 0; i--) {
+        let r = ripples[i];
+        ctx.beginPath();
+        ctx.arc(r.x, r.y, r.r, 0, 2 * Math.PI);
+        ctx.strokeStyle = r.color;
+        ctx.globalAlpha = r.alpha;
+        ctx.lineWidth = 2.5;
+        ctx.stroke();
+        ctx.globalAlpha = 1;
+        r.r += r.grow;
+        r.alpha *= 0.93;
+        if (r.r > r.maxR || r.alpha < 0.04) {
+          ripples.splice(i, 1);
+        }
+      }
+      // Draw cursor dot
+      ctx.beginPath();
+      ctx.arc(mouse.x, mouse.y, 7, 0, 2 * Math.PI);
+      ctx.fillStyle = '#1e90ff';
+      ctx.globalAlpha = 0.18;
+      ctx.fill();
+      ctx.globalAlpha = 1;
+      requestAnimationFrame(animateRipples);
+    }
+    animateRipples();
+  }
+
+  // =========================
+  // 11. Lazy Load Images
+  // =========================
+  document.querySelectorAll('img[loading="lazy"]').forEach(img => {
+    img.addEventListener('load', function () {
+      img.classList.add('loaded');
+    });
+  });
+
+  // =========================
+  // 12. Accessibility: Keyboard Navigation for Modals
+  // =========================
+  // Trap focus in modals
+  function trapFocus(modal) {
+    const focusable = modal.querySelectorAll('button, [href], input, textarea, [tabindex]:not([tabindex="-1"])');
+    if (focusable.length === 0) return;
+    const first = focusable[0];
+    const last = focusable[focusable.length - 1];
+    modal.addEventListener('keydown', function (e) {
+      if (e.key !== 'Tab') return;
+      if (e.shiftKey) {
+        if (document.activeElement === first) {
+          e.preventDefault();
+          last.focus();
+        }
+      } else {
+        if (document.activeElement === last) {
+          e.preventDefault();
+          first.focus();
+        }
+      }
+    });
+  }
+  if (serviceModal) trapFocus(serviceModal);
+  if (portfolioModal) trapFocus(portfolioModal);
+
+  // =========================
+  // 13. Multi-language Support Placeholder
+  // =========================
+  // Future: Add i18n logic here
+
+});
+
+/* 
+================================================================================
+README (Deployment & Maintenance Instructions)
+================================================================================
+
+Velza Solutions - AI Agency Website
+-----------------------------------
+
+1. Project Structure:
+   - index.html
+   - /css/styles.css
+   - /js/main.js
+   - /assets/ (images, SVGs, logo, etc.)
+
+2. Deployment:
+   - Ready for Vercel, Netlify, or any static hosting.
+   - Place all files in the root or public directory.
+   - No server-side code required.
+   - For environment variables (e.g., API keys), use .env files or Vercel/Netlify dashboard.
+
+3. Customization:
+   - Replace logo-placeholder.svg and other images in /assets/.
+   - Update company info, team, services, and portfolio in index.html.
+   - Add blog posts, testimonials, and more as needed.
+
+4. Animations:
+   - Water ripple cursor and water/fish preloader are in main.js.
+   - All animations are accessible and performant.
+
+5. Accessibility:
+   - Semantic HTML5, ARIA labels, keyboard navigation, color contrast.
+   - All images have alt text.
+
+6. SEO:
+   - Meta tags, structured data (JSON-LD), clean URLs, semantic markup.
+
+7. Performance:
+   - Images use loading="lazy".
+   - CSS and JS are modular and minified for production.
+
+8. Multi-language:
+   - Structure is ready for i18n; add language switcher and translations as needed.
+
+9. Contact/Newsletter:
+   - Forms are client-side only; connect to backend or service for production.
+
+10. Extending:
+   - Add more sections, features, or integrations as needed.
+   - All code is commented for clarity.
+
+================================================================================
+End of Velza Solutions Website Source
+================================================================================
+*/
